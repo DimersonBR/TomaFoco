@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Timer from './components/Timer';
+import Controls from './components/Controls';
+import TaskList from './components/TaskList';
+import Settings from './components/Settings';
+import { TimerProvider } from './context/TimerContext';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <TimerProvider>
+      <div className="app">
+        <h1>TomaFoco</h1>
+        <Timer />
+        <Controls />
+        <TaskList />
+        <Settings />
+      </div>
+    </TimerProvider>
   );
 }
 
